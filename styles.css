@@ -1,0 +1,305 @@
+        /* Custom CSS for global styles, animations, and theme variables */
+        @import url("https://use.typekit.net/your-kit-id.css");
+
+        :root {
+            /* Dark Mode Defaults */
+            --body-bg-color: #000000;
+            --body-text-color: #e2e8f0;
+            --main-content-bg: radial-gradient(ellipse at bottom, rgba(27, 39, 53, 0.9) 0%, rgba(9, 10, 15, 0.9) 100%);
+            --header-bg-color: rgba(9, 10, 15, 0.8);
+            --header-text-color: #e2e8f0;
+            --header-link-hover: #93c5fd;
+            --card-bg-color: rgba(30, 41, 59, 0.8);
+            --card-text-color: #cbd5e1;
+            --card-border-color: rgba(100, 116, 139, 0.5);
+            --card-shadow-color: rgba(0, 0, 0, 0.1);
+            --skill-icon-color: #a78bfa;
+            --project-title-color: #93c5fd;
+            --project-tag-bg: rgba(129, 140, 248, 0.3);
+            --project-tag-text: #e0e7ff;
+            --learn-more-button-bg: #60a5fa;
+            --learn-more-button-hover-bg: #3b82f6;
+            --contact-card-bg: rgba(30, 41, 59, 0.9);
+            --contact-card-border: rgba(100, 116, 139, 0.7);
+            --email-header-bg: rgba(15, 23, 42, 0.9);
+            --email-header-text: #cbd5e1;
+            --email-input-label: #a0aec0;
+            --email-input-text: #e2e8f0;
+            --email-input-placeholder: #94a3b8;
+            --email-message-bg: rgba(15, 23, 42, 0.7);
+            --email-footer-bg: rgba(15, 23, 42, 0.9);
+            --compose-button-bg: #6366f1;
+            --compose-button-text: #e0e7ff;
+            --compose-button-shadow: rgba(99, 102, 241, 0.4);
+            --compose-button-hover-bg: #4f46e5;
+            --compose-button-hover-shadow: rgba(99, 102, 241, 0.6);
+            --footer-bg: rgba(51, 65, 85, 0.95);
+            --heading-color: #93c5fd;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--body-text-color);
+            background-color: var(--body-bg-color); 
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            overflow-x: hidden;
+            position: relative;
+            transition: background-image 0.5s ease, background-color 0.5s ease, color 0.5s ease;
+        }
+
+        .section-padding {
+            padding: 64px 16px;
+        }
+        @media (min-width: 640px) {
+            .section-padding {
+                padding: 96px 32px;
+            }
+        }
+        @media (min-width: 1024px) {
+            .section-padding {
+                padding: 96px 64px;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        .first-letter{
+            color:#6366f1;
+            text-shadow:0 0 8px #6366f1, 0 0 15px #6366f1;
+            font-size:1.2em;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.6); }
+            100% { opacity: 0.2; transform: scale(1); }
+        }
+
+        #main-header {
+            background-color: var(--header-bg-color);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.5s ease, color 0.5s ease;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 50;
+        }
+        #main-header a {
+            color: var(--header-text-color);
+            transition: color 0.5s ease;
+        }
+        #main-header a.text-indigo-600 {
+            color: var(--header-text-color);
+        }
+        
+        #main-content {
+            background: var(--main-content-bg);
+            color: var(--body-text-color);
+            padding-top: 24px;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+        /* Updated font for the hero heading */
+        #main-content h1, #main-content p.text-xl, #main-content p.text-2xl {
+            font-family: 'Bebas Neue', sans-serif;
+            color: var(--body-text-color);
+        }
+
+         /* About Section Font */
+        #about {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        #about {
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 2px;
+            line-height: 1.6;
+        }
+
+
+        .about-line{
+            transition: all 0.4s ease;
+            font-size: 1.05rem;
+        }
+
+        .about-line:hover{
+            transform: translateX(5px);
+        }
+
+        /* Consistent color for section titles */
+        .section-title {
+            color: var(--heading-color);
+        }
+
+        /* Skill Card Styles */
+        .skill-card-container {
+            width: 100%;
+            height: 200px;
+            perspective: 1000px;
+        }
+
+        .skill-card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px var(--card-shadow-color), 0 1-px 3-px var(--card-shadow-color);
+            background-color: var(--card-bg-color);
+            color: var(--card-text-color);
+            border: 1px solid var(--card-border-color);
+            transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+        }
+
+        .skill-card-container:hover .skill-card {
+            transform: rotateY(180deg);
+        }
+
+        .skill-card-front,
+        .skill-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .skill-card-front {
+            background-color: var(--card-bg-color);
+            color: var(--card-text-color);
+            z-index: 2;
+            animation: floatAnimation 3s ease-in-out infinite alternate;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+        .skill-card-container:hover .skill-card-front {
+            animation-play-state: paused;
+        }
+        
+        .skill-card-back {
+            background-color: var(--contact-card-bg);
+            color: var(--body-text-color);
+            transform: rotateY(180deg);
+            z-index: 1;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding-top: 1rem;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        .glow-cloud:hover {
+            box-shadow: 0 0 25px rgba(59,130,246,0.9), 0 0 60px rgba(99,102,241,0.6);
+        }
+
+        .glow-ai:hover {
+            box-shadow: 0 0 25px rgba(168,85,247,0.9), 0 0 60px rgba(236,72,153,0.6);
+        }
+
+        .glow-database:hover {
+            box-shadow: 0 0 25px rgba(34,197,94,0.9), 0 0 60px rgba(20,184,166,0.6);
+        }
+
+        .glow-automation:hover {
+            box-shadow: 0 0 25px rgba(234,179,8,0.9), 0 0 60px rgba(249,115,22,0.6);
+        }
+
+        .glow-version:hover {
+            box-shadow: 0 0 35px rgba(239,68,68,0.9), 0 0 70px rgba(185,28,28,0.6);
+        }
+
+        .glow-current:hover {
+            box-shadow: 0 0 30px rgba(255,215,0,0.95), 0 0 70px rgba(255,215,0,0.7);
+        }
+
+        /* Project Card Styles */
+        .project-card {
+            background-color: var(--card-bg-color);
+            color: var(--card-text-color);
+            border: 1px solid var(--card-border-color);
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px var(--card-shadow-color), 0 1px 3px var(--card-shadow-color);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Contact Card Styles (Email Client look) */
+        .contact-card {
+            background-color: var(--contact-card-bg);
+            color: var(--body-text-color);
+            border: 1px solid var(--contact-card-border);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            padding: 0;
+            overflow: hidden;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+        }
+        .email-window-header {
+            background-color: var(--email-header-bg);
+            color: var(--email-header-text);
+            transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+        }
+
+        .highlight-green {
+            background-color: rgba(144, 238, 144, 0.3); /* Light green with opacity */
+            padding: 2px 4px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .highlight-red {
+            background-color: rgba(255, 182, 193, 0.3); /* Light red with opacity */
+            padding: 2px 4px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .highlight-blue {
+            background-color: rgba(173, 216, 230, 0.3); /* Light blue with opacity */
+            padding: 2px 4px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Message Box styling */
+        .message-box {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 12px 24px;
+            background-color: #10B981;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .message-box.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+
+
+
+
