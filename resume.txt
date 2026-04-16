@@ -1,0 +1,65 @@
+Name: Tashii
+
+Education: - Master of Science in Inorganic Chemistry University of
+North Carolina - Bachelor of Science in Chemistry with ACS Research The
+College of New Jersey
+
+Work History 1:
+
+Public Communication Associate for the University of North Carolina
+Laboratory Safety Protocol Coordinator for the University of North Carolina
+Research Lab Associate for the University of North Carolina
+Graduate Teaching Assistant (General Chemistry II) for the University of North
+Carolina
+Amplitude Operation Specialist for Thermo Fisher Scientific
+Student Supervisor for the Sodexo at The College of New Jersey
+Pharmaceutical Technician for CVS
+Merchandising Associate for Crate and Barrel
+Sales Intern for Greater Newark Conservancy
+
+Skills 1:
+
+Cloud & Virtualization includes:  
+Google Cloud Platform,
+DevOps, Kubernetes, Docker, and
+Programming, Scripting
+
+Skills 2:
+
+Artificial Intelligence includes:
+Scikit-learn
+TensorFlow, Keras
+Matplotlib, Seaborn
+Pandas, NumPy
+
+Skills 3:
+
+Skills: Databases include: 
+SQL (MySQL, MSSQL)
+NoSQL (MongoDB)
+Database Administration
+Backup & Recovery
+
+Skills 4:
+
+Automation & Scripting includes:
+SQL (MySQL, MSSQL)
+NoSQL (MongoDB)
+Database Administration
+Backup & Recovery
+
+Skills 5:
+
+Version Control includes:
+GitHub
+Tracking and managing changes
+Branching & Merging
+Code Reviews
+
+AI Projects: Using machine learning and natural language processing to develop models that identify patterns, enabling accurate predictions, automating text analysis, and improving customer engagement. 
+
+Currently Working On:
+UI/UX Design
+DNS Management
+React.js
+
