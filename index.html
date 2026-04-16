@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Engineer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
+    <script src="https://unpkg.com/minisearch@6.1.0/dist/umd/index.min.js"></script>
+    <script type="module">
+        import { pipeline } from "https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2";
+        window.transformers = { pipeline };
+</script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    
+    <canvas id="global-starfield"></canvas>
+
+    <header id="main-header" class="flex justify-between items-center px-6 py-4 w-full z-50 fixed top-0 left-0">
+        <div class="text-2xl font-bold text-indigo-400" style="font-family: 'Bebas Neue', sans-serif;">
+            Tashii Brown
+        </div>
+        <nav class="hidden lg:flex space-x-8 text-gray-300">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+        <button id="mobile-menu-button" class="lg:hidden text-gray-300 text-3xl focus:outline-none">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <main id="main-content">
+        <div id="mobile-nav-menu" class="fixed left-0 w-full flex items-center justify-center transform -translate-y-full transition-transform duration-500 lg:hidden">
+            <div class="mobile-menu-grid">
+                <a href="#about" class="menu-box">ABOUT</a>
+                <a href="#skills" class="menu-box">SKILLS</a>
+                <a href="#projects" class="menu-box">PROJECTS</a>
+                <a href="#contact" class="menu-box">CONTACT</a>
+
+            </div>
+        </div>
+
+        <section id="about" class="section-padding relative z-10"> 
+            <div id="starfield">
+                <canvas id="stars"></canvas>
+            </div>
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-12 px-10"> 
+                <div class="flex-shrink-0"> 
+                    <img src="profile.jpg" alt="A professional headshot of the IT engineer" class="rounded-lg shadow-lg w-64 h-64 sm:w-80 sm:h-80 object-cover"> 
+                </div> 
+                <div class="text-center md:text-left w-full"> 
+                    <h1 id="highlight-title" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight mb-4" style="font-family: 'Bebas Neue', sans-serif;">
+                    Software Programming And Coding Ecosystems (S.P.A.C.E.)
+                    </h1>
+                    <p class="text-base text-gray-300 mb-4"> After I power off my computer, I recharge by:<br><br>  
+                        <span class="highlight-green inline-block mb-1">Forest bathing near captivating landscapes,</span> 
+                        <span class="highlight-red inline-block mb-1">indulging in the realm of anime, or</span> 
+                        <span class="highlight-blue inline-block">adventuring to scenic waterfalls.</span><br> <br> 
+                            These moments help me return with a fresh perspective to design efficient computational solutions. 
+                    </p> 
+                        <a href="#contact" class="inline-block px-6 py-3 text-sm font-semibold text-white bg-indigo-600 rounded-full shadow-lg hover:bg-indigo-700 transition-colors duration-300"> 
+                        Get In Touch 
+                        </a> 
+                </div> 
+            </div> 
+        </section>
+
+        <section class="relative w-full -mt-16 mb-16 solar-system-layer">
+            <img src="solarsystem.png" 
+                alt="Transparent Solar System"
+                class="w-full max-w-7xl mx-auto opacity-40 pointer-events-none">
+        </section>
+        <section id="skills" class="section-padding relative z-10">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="skill-card-container">
+                        <div class="skill-card bg-gradient-to-br from-blue-600 to-indigo-700 glow-cloud">
+                            <div class="skill-card-front">
+                                <i class="fas fa-cloud-upload-alt skill-icon text-5xl mb-4 text-white"></i>
+                                <h3 class="text-xl font-bold text-white">Cloud & Virtualization</h3>
+                                <div class="absolute bottom-4 right-4 text-white opacity-70"><i class="fas fa-arrow-right"></i></div>
+                            </div>
+                            <div class="skill-card-back p-6 text-left">
+                                <h3 class="text-xl font-bold text-white mb-2">Expertise:</h3>
+                                <ul class="list-disc list-inside space-y-1 text-gray-200 text-sm">
+                                    <li>Google Cloud Platform</li>
+                                    <li>DevOps, Kubernetes, Docker</li>
+                                    <li>Programming, Scripting</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card-container">
+                        <div class="skill-card bg-gradient-to-br from-purple-600 to-pink-500 glow-ai">
+                            <div class="skill-card-front">
+                                <i class="fas fa-robot skill-icon text-5xl mb-4 text-white"></i>
+                                <h3 class="text-xl font-bold text-white">Artificial Intelligence</h3>
+                                <div class="absolute bottom-4 right-4 text-white opacity-70"><i class="fas fa-arrow-right"></i></div>
+                            </div>
+                            <div class="skill-card-back p-6 text-left">
+                                <h3 class="text-xl font-bold text-white mb-2">Expertise:</h3>
+                                <ul class="list-disc list-inside space-y-1 text-gray-200 text-sm">
+                                    <li>Scikit-learn</li>
+                                    <li>TensorFlow, Keras</li>
+                                    <li>Matplotlib, Seaborn</li>
+                                    <li>Pandas, NumPy</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card-container">
+                        <div class="skill-card bg-gradient-to-br from-green-600 to-teal-500 glow-database">
+                            <div class="skill-card-front">
+                                <i class="fas fa-database skill-icon text-5xl mb-4 text-white"></i>
+                                <h3 class="text-xl font-bold text-white">Databases</h3>
+                                <div class="absolute bottom-4 right-4 text-white opacity-70"><i class="fas fa-arrow-right"></i></div>
+                            </div>
+                            <div class="skill-card-back p-6 text-left">
+                                <h3 class="text-xl font-bold text-white mb-2">Expertise:</h3>
+                                <ul class="list-disc list-inside space-y-1 text-gray-200 text-sm">
+                                    <li>SQL (MySQL, MSSQL)</li>
+                                    <li>NoSQL (MongoDB)</li>
+                                    <li>Database Administration</li>
+                                    <li>Backup & Recovery</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card-container">
+                        <div class="skill-card bg-gradient-to-br from-yellow-500 to-orange-600 glow-automation">
+                            <div class="skill-card-front">
+                                <i class="fas fa-terminal skill-icon text-5xl mb-4 text-white"></i>
+                                <h3 class="text-xl font-bold text-white">Automation & Scripting</h3>
+                                <div class="absolute bottom-4 right-4 text-white opacity-70"><i class="fas fa-arrow-right"></i></div>
+                            </div>
+                            <div class="skill-card-back p-6 text-left">
+                                <h3 class="text-xl font-bold text-white mb-2">Expertise:</h3>
+                                <ul class="list-disc list-inside space-y-1 text-gray-200 text-sm">
+                                    <li>Python, PowerShell</li>
+                                    <li>Bash Scripting</li>
+                                    <li>Ansible, Terraform</li>
+                                    <li>CI/CD Pipelines</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card-container">
+                        <div class="skill-card bg-gradient-to-br from-red-600 to-red-800 glow-version">
+                            <div class="skill-card-front">
+                                <i class="fas fa-code-branch skill-icon text-5xl mb-4 text-white"></i>
+                                <h3 class="text-xl font-bold text-white">Version Control</h3>
+                                <div class="absolute bottom-4 right-4 text-white opacity-70"><i class="fas fa-arrow-right"></i></div>
+                            </div>
+                            <div class="skill-card-back p-6 text-left">
+                                <h3 class="text-xl font-bold text-white mb-2">Expertise:</h3>
+                                <ul class="list-disc list-inside space-y-1 text-gray-200 text-sm">
+                                    <li>GitHub</li>
+                                    <li>Tracking and managing changes</li>
+                                    <li>Branching & Merging</li>
+                                    <li>Code Reviews</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card-container">
+                        <div class="skill-card bg-gradient-to-br from-yellow-400 to-yellow-600 glow-current">
+                            <div class="skill-card-front">
+                                <img src="laptop_man.png" alt="Man working on computer" class="w-16 h-16 mb-4">
+                                <h3 class="text-xl font-bold text-white">Currently Working On ...</h3>
+                                <div class="absolute bottom-4 right-4 text-white opacity-70">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                            <div class="skill-card-back p-6 text-left">
+                                <h3 class="text-xl font-bold text-white mb-2">Skills:</h3>
+                                <ul class="list-disc list-inside space-y-1 text-gray-200 text-sm">
+                                    <li>UI/UX Design</li>
+                                    <li>DNS Management</li>
+                                    <li>React.js</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section-padding relative z-10">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="project-card p-6">
+                        <img src="ml.png" alt="Machine Learning Project" class="rounded-md w-full mb-4">
+                        <h3 class="text-xl font-bold mb-2">Machine Learning</h3>
+                        <p class="text-sm mb-4 text-gray-400">
+                            Developed predictive models that analyze largescale data, discover patterns, and forecast future trends by utilizing linear regression, random forest regression, and decision trees thus achieving >90% accuracy.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="project-tag px-3 py-1 rounded-full text-xs font-semibold">Supervised learning</span>
+                            <span class="project-tag px-3 py-1 rounded-full text-xs font-semibold">Unsupervised learning</span>
+                            <span class="project-tag px-3 py-1 rounded-full text-xs font-semibold">Reinforcement Learning</span>
+                        </div>
+                        <a href="https://www.kaggle.com/tashiib" target="_blank" class="text-sm font-medium hover:underline">Learn More &rarr;</a>
+                    </div>
+
+                    <div class="project-card p-6">
+                        <img src="nlp.jpg" alt="NLP Project" class="rounded-md w-full mb-4">
+                        <h3 class="text-xl font-bold mb-2">Natural Language Processing</h3>
+                        <p class="text-sm mb-4 text-gray-400">
+                            Built a sentiment analysis tool to automatically classify customer feedback as positive, negative, or neutral, improving feedback processing efficiency.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="project-tag px-3 py-1 rounded-full text-xs font-semibold">NER</span>
+                            <span class="project-tag px-3 py-1 rounded-full text-xs font-semibold">Sentiment Analysis</span>
+                            <span class="project-tag px-3 py-1 rounded-full text-xs font-semibold">Text Classification</span>
+                        </div>
+                        <a href="https://www.kaggle.com/tashiib" target="_blank" class="text-sm font-medium hover:underline">Learn More &rarr;</a>
+                    </div>
+
+                    <div class="project-card p-6">
+                        <img src="loading.jpg" alt="Pygame Project" class="rounded-md w-full mb-4">
+                        <h3 class="text-xl font-bold mb-2">Ongoing Projects</h3>
+                        <p class="text-sm mb-4 text-gray-400">
+                            Creating user interfaces, including buttons, forms, and dashboards. Developing single-page applications (SPAs) for seamless user experiences. Building interactive components to enhance usability and engagement.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="project-tag px-3 py-1 rounded-full text-xs font-semibold">C++</span>
+                            <span class="project-tag px-3 py-1 rounded-full text-xs font-semibold">React.js</span>
+                            <span class="project-tag px-3 py-1 rounded-full text-xs font-semibold">DNS Management</span>
+                        </div>
+                        <a href="https://www.kaggle.com/tashiib" target="_blank" class="text-sm font-medium hover:underline">Learn More &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section-padding relative z-10">
+            <div class="max-w-7xl mx-auto">
+                <div class="contact-card">
+                    <div class="email-window-header flex items-center justify-between p-4">
+                        <span>New Message</span>
+                        <div class="window-controls space-x-2">
+                            <button><i class="fas fa-minus"></i></button>
+                            <button><i class="far fa-square"></i></button>
+                            <button><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                    <form id="contact-form" class="p-6">
+                        <div class="flex items-center border-b border-gray-600 py-2">
+                            <label for="to" class="text-sm text-gray-400 w-16">To:</label>
+                            <input type="text" id="to" name="to" value="Tashiibrown1@gmail.com" readonly class="bg-transparent border-none outline-none w-full text-white">
+                        </div>
+                        <div class="flex items-center border-b border-gray-600 py-2">
+                            <label for="subject" class="text-sm text-gray-400 w-16">Subject:</label>
+                            <input type="text" id="subject" name="subject" placeholder="Let's connect" class="bg-transparent border-none outline-none w-full text-white placeholder-gray-500">
+                        </div>
+                        <textarea id="message" class="w-full bg-gray-800 bg-opacity-50 border-none outline-none min-h-[200px] mt-4 p-4 text-white placeholder-gray-500 rounded-md" placeholder="Write your message here..." name="message"></textarea>
+                    </form>
+                    <div class="email-footer-bar flex justify-between items-center p-4 bg-gray-900 rounded-b-lg">
+                        <button id="send-button" class="bg-indigo-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-indigo-700 transition-colors">
+                            <i class="fas fa-paper-plane mr-2"></i>Send
+                        </button>
+                        <div class="flex space-x-4">
+                            <button class="text-gray-400 hover:text-white"><i class="fas fa-paper-clip"></i></button>
+                            <button class="text-gray-400 hover:text-white"><i class="fas fa-ellipsis-v"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <div id="message-box" class="message-box">
+        Email client opened successfully!
+    </div>
+
+    <footer id="main-footer" class="py-8 text-center text-sm relative z-10">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>&copy; 2025 Tashii Brown Portfolio. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div id="ai-chat-widget">
+        <div id="ai-orb"></div>
+        <div id="ai-chat-window">
+            <div id="ai-chat-header">
+            Portfolio Assistant
+            </div>
+            <div id="ai-chat-messages">
+                <div class="ai-message ai-bot">
+                Thank you for showing an interest in my webpage 👋<br><br>
+                I'm Tashii's AI assistant.<br><br>
+                Ask about Tashii's:<br>
+                • Education<br>
+                • Work History<br>
+                • Skill Sets<br>  
+                • AI Projects<br>  
+                • Currently Working On<br>
+
+                </div>
+            </div>
+            <div id="ai-chat-input">
+                <input id="chat-question" type="text" placeholder="Ask a question...">
+                <button id="chat-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
